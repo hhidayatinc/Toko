@@ -16,28 +16,28 @@ services:
     container_name: db
     image: mysql
     restart: always
-    environment:
-      MYSQL_DATABASE: toko
-      MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
-      MYSQL_USER: MYSQL_USER
-      MYSQL_PASSWORD: MYSQL_PASSWORD
     ports:
       - "3306:3306"
+    environment:
+      MYSQL_DATABASE: toko
+      MYSQL_ROOT_PASSWORD: admin
+      # MYSQL_USER: MYSQL_USER
+      # MYSQL_PASSWORD: MYSQL_PASSWORD
     volumes:
       - db:/var/lib/mysql
       - ./toko.sql:/docker-entrypoint-initdb.d/toko.sql 
     networks:
       - backend
   
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    ports:
-        - '3060:80'
-    restart: always
-    environment:
-        PMA_HOST: db
-    depends_on:
-        - db
+  # phpmyadmin:
+  #   image: phpmyadmin/phpmyadmin
+  #   ports:
+  #       - '3060:80'
+  #   restart: always
+  #   environment:
+  #       PMA_HOST: db
+  #   depends_on:
+  #       - db
 
 # volumes:
 #     db: 
@@ -49,5 +49,5 @@ networks:
     ipam: 
       driver: default
       config:
-        - subnet: 172.17.0.0/24
+        - subnet: 172.20.0.0/24
 

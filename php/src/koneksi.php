@@ -1,5 +1,5 @@
 <?php
-define('DB_SERVER', '172.17.0.2');
+define('DB_SERVER', '172.20.0.2');
 define('DB_USER', 'root');
 define('DB_PASS', 'admin');
 define('DB_NAME', 'toko');
