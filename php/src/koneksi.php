@@ -1,12 +1,9 @@
 <?php
+define('DB_SERVER', '172.17.0.2');
+define('DB_USER', 'root');
+define('DB_PASS', 'admin');
+define('DB_NAME', 'toko');
 
-$host = 'db';
-$user = 'MYSQL_USER';
-$pass = 'MYSQL_PASSWORD';
-$mydatabase = 'toko';
+	$connect=mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
 
-$connect = new mysqli($HOST, $user, $pass, $mydatabase);
-if ($connect->connect_error) {
-    die('Koneksi Database gagal :' . $connect->connect_error);
-}
 ?>
