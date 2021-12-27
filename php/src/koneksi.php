@@ -1,8 +1,8 @@
 <?php
 
-$host = 'db';
-$user = 'MYSQL_USER';
-$password = 'MYSQL_PASSWORD';
+$server = 'localhost';
+$user = 'root';
+$password = '';
 $db = 'toko';
 
 $connect = new mysqli($server, $user, $password, $db);
