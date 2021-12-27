@@ -9,8 +9,8 @@ services:
       - ./php/src:/var/www/html/
     ports:
       - 8000:80
-    networks:
-      - backend
+    # networks:
+    #   - backend
 
   db:
     container_name: db
@@ -19,13 +19,15 @@ services:
     ports:
       - "3306:3306"
     environment:
+      MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
       MYSQL_DATABASE: toko
-      MYSQL_ROOT_PASSWORD: admin
-    volumes:
-      - db:/var/lib/mysql
-      - ./toko.sql:/docker-entrypoint-initdb.d/toko.sql 
-    networks:
-      - backend
+      MYSQL_USER: MYSQL_USER
+      MYSQL_PASSWORD: MYSQL_PASSWORD
+    # volumes:
+    #   - db:/var/lib/mysql
+    #   - ./toko.sql:/docker-entrypoint-initdb.d/toko.sql 
+    # networks:
+    #   - backend
   
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -40,11 +42,4 @@ services:
 volumes:
     db: 
 
-#Docker Networks
-networks:
-  backend:
-    name: backend-networks
-    ipam: 
-      driver: default
-      config:
-        - subnet: 172.20.0.0/24
+

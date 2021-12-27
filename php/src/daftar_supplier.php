@@ -14,7 +14,7 @@
   </head>
   <?php 
   include 'head.php'; 
-  include 'koneksi.php';
+  
   ?>
   <body>
   <div class="container"  style="margin-top: 50px;">
