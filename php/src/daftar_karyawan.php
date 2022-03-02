@@ -53,6 +53,7 @@
 					<td><?php echo $row["email"]?></td>
                     <td><?php echo $row["jabatan"]?></td>
 					<td>
+            //ini 
 						<a href="edit_karyawan.php?id_karyawan=<?php echo $row['id_karyawan'];?>"><input type="submit" class="button" value="Edit"></a>
 						<a href="hapus_karyawan.php?id_karyawan=<?php echo $row['id_karyawan'];?>"><input type="submit" class="button" value="Hapus"></a>
 					</td>
